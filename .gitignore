@@ -1,0 +1,6 @@
+/.idea
+/.venv
+/enterprise/*
+!/enterprise/__init__.py
+/dependencies/*
+!/dependencies/__init__.py

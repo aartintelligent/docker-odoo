@@ -1,0 +1,9 @@
+/.idea
+/.venv
+/.git
+/.github
+/.gitignore
+/docker-compose.yml
+/Dockerfile
+/LICENSE
+/README.rst
