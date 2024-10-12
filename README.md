@@ -1,4 +1,4 @@
-AArtIntelligent Odoo
+Odoo
 =============
 
 ```shell
