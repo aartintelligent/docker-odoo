@@ -1,4 +1,4 @@
-AArtIntelligent Odoo Addons
+AArtIntelligent Odoo
 =============
 
 ```shell
