@@ -1,9 +1,7 @@
 Docker Odoo
 =============
 
-### Usage
-
-Docker
+### Usage Docker
 
 ```shell
 docker build . -t aartintelligent/odoo:latest
@@ -13,7 +11,7 @@ docker build . -t aartintelligent/odoo:latest
 docker push aartintelligent/odoo:latest
 ```
 
-Docker Compose
+### Usage Docker Compose
 
 ```shell
 docker compose build
