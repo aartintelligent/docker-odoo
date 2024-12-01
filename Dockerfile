@@ -4,11 +4,7 @@ FROM odoo:${ODOO_VERSION}
 
 USER root
 
-COPY --chown=odoo enterprise /mnt/enterprise
-
-COPY --chown=odoo dependencies /mnt/dependencies
-
-COPY --chown=odoo addons /mnt/addons
+COPY --chown=odoo mnt /mnt
 
 RUN set -e; \
     for dir in /mnt/dependencies /mnt/addons; do \
