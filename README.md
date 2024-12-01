@@ -33,7 +33,6 @@ services:
   database:
     image: postgres:17
     user: root
-    restart: always
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=odoo
@@ -48,8 +47,6 @@ services:
     build:
       context: .
     command: --
-    restart: always
-    tty: true
     volumes:
       - ./mnt/enterprise:/mnt/enterprise:ro
       - ./mnt/addons:/mnt/addons:ro
