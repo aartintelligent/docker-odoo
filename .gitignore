@@ -1,7 +1,9 @@
 /.idea
 /.venv
 __pycache__
-/enterprise/*
-!/enterprise/__init__.py
-/dependencies/*
-!/dependencies/__init__.py
+/mnt/enterprise/*
+!/mnt/enterprise/__init__.py
+/mnt/addons/*
+!/mnt/addons/__init__.py
+/mnt/dependencies/*
+!/mnt/dependencies/__init__.py
