@@ -6,11 +6,11 @@ Docker Odoo
 Docker
 
 ```shell
-docker build . -t aartintelligent/odoo:18.0
+docker build . -t aartintelligent/odoo:latest
 ```
 
 ```shell
-docker push aartintelligent/odoo:18.0
+docker push aartintelligent/odoo:latest
 ```
 
 Docker Compose
