@@ -31,15 +31,16 @@ docker compose down -v
 services:
 
   database:
-    image: postgres:16
+    image: postgres:17
     user: root
     restart: always
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=odoo
       - POSTGRES_PASSWORD=password
+      - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
-      - database-volume:/var/lib/postgresql/data
+      - /opt/postgres/data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -50,13 +51,11 @@ services:
     restart: always
     tty: true
     volumes:
-      - ./enterprise:/mnt/enterprise:ro
-      - ./addons:/mnt/addons:ro
+      - ./mnt/enterprise:/mnt/enterprise:ro
+      - ./mnt/addons:/mnt/addons:ro
       - odoo-volume:/var/lib/odoo
-    depends_on:
-      - database
     ports:
-      - "8089:8069"
+      - "8069:8069"
       - "8072:8072"
 
 volumes:

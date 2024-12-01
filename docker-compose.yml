@@ -24,8 +24,6 @@ services:
       - ./mnt/enterprise:/mnt/enterprise:ro
       - ./mnt/addons:/mnt/addons:ro
       - odoo-volume:/var/lib/odoo
-    depends_on:
-      - database
     ports:
       - "8069:8069"
       - "8072:8072"
