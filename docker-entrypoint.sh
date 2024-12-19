@@ -8,7 +8,7 @@ fi
 
 # set the postgres database host, port, user and password according to the environment
 # and pass them as arguments to the odoo process if not present in the config file
-: ${DB_HOST:=${POSTGRES_PORT_5432_TCP_ADDR:='database'}}
+: ${DB_HOST:=${POSTGRES_PORT_5432_TCP_ADDR:='odoo-database'}}
 : ${DB_PORT:=${POSTGRES_PORT_5432_TCP_PORT:='5432'}}
 : ${DB_USER:=${POSTGRES_USER:=${POSTGRES_USER:='odoo'}}}
 : ${DB_PASSWORD:=${POSTGRES_PASSWORD:=${POSTGRES_PASSWORD:='password'}}}

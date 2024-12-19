@@ -30,7 +30,7 @@ docker compose down -v
 ```yaml
 services:
 
-  database:
+  odoo-database:
     image: postgres:17
     user: root
     environment:
@@ -44,16 +44,18 @@ services:
     ports:
       - "5432:5432"
 
-  odoo:
+  odoo-web:
     build:
       context: .
     volumes:
       - ./mnt/enterprise:/mnt/enterprise:ro
+      - ./mnt/dependencies:/mnt/dependencies:ro
       - ./mnt/addons:/mnt/addons:ro
       - odoo-volume:/var/lib/odoo
       # - /opt/odoo/data:/var/lib/odoo
     ports:
       - "8069:8069"
+      - "8071:8071"
       - "8072:8072"
 
 volumes:
