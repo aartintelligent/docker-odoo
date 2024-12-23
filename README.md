@@ -33,26 +33,29 @@ services:
   odoo-database:
     image: postgres:17
     user: root
+    restart: always
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=${POSTGRES_USER:-odoo}
-      - POSTGRES_PASSWORD=${POSTGRES_USER:-password}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - database-volume:/var/lib/postgresql/data
-      # - /opt/postgres/data:/var/lib/postgresql/data
+      #- /opt/postgres/data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
   odoo-web:
     build:
       context: .
+    user: root
+    restart: always
     volumes:
       - ./mnt/enterprise:/mnt/enterprise:ro
       - ./mnt/dependencies:/mnt/dependencies:ro
       - ./mnt/addons:/mnt/addons:ro
       - odoo-volume:/var/lib/odoo
-      # - /opt/odoo/data:/var/lib/odoo
+      #- /opt/odoo/data:/var/lib/odoo
     ports:
       - "8069:8069"
       - "8071:8071"
