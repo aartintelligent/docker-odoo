@@ -1,11 +1,17 @@
 services:
 
+  odoo-maildev:
+    image: maildev/maildev
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+
   odoo-database:
     image: postgres:17
     user: root
     restart: always
     environment:
-      - POSTGRES_DB=postgres
+      - POSTGRES_DB=${POSTGRES_DB:-postgres}
       - POSTGRES_USER=${POSTGRES_USER:-odoo}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
       - PGDATA=/var/lib/postgresql/data/pgdata
