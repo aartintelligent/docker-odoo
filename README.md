@@ -30,20 +30,26 @@ docker compose down -v
 ```yaml
 services:
 
+  odoo-mailer:
+    image: maildev/maildev
+    ports:
+      - '1080:1080'
+      - '1025:1025'
+
   odoo-database:
     image: postgres:17
     user: root
     restart: always
     environment:
       - POSTGRES_DB=postgres
-      - POSTGRES_USER=${POSTGRES_USER:-odoo}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-password}
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=password
       - PGDATA=/var/lib/postgresql/data/pgdata
     volumes:
       - database-volume:/var/lib/postgresql/data
       #- /opt/postgres/data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - '5432:5432'
 
   odoo-web:
     build:
@@ -57,9 +63,9 @@ services:
       - odoo-volume:/var/lib/odoo
       #- /opt/odoo/data:/var/lib/odoo
     ports:
-      - "8069:8069"
-      - "8071:8071"
-      - "8072:8072"
+      - '8069:8069'
+      - '8071:8071'
+      - '8072:8072'
 
 volumes:
   database-volume:
