@@ -18,7 +18,7 @@ RUN set -e; \
         done; \
     done
 
-RUN sed -i 's|/mnt/extra-addons|/mnt/enterprise,/mnt/dependencies,/mnt/addons|' /etc/odoo/odoo.conf
+RUN sed -i 's|/mnt/extra-addons|/mnt/enterprise,/mnt/addons|' /etc/odoo/odoo.conf
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
