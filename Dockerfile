@@ -7,7 +7,7 @@ USER root
 COPY --chown=odoo mnt /mnt
 
 RUN set -e; \
-    for dir in /mnt/dependencies /mnt/addons; do \
+    for dir in /mnt/addons; do \
         find "$dir" -name 'requirements.txt' | while read requirements; do \
             if [ -s "$requirements" ]; then \
                 if ! pip install -r "$requirements"; then \

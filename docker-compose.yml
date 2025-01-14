@@ -28,7 +28,6 @@ services:
     restart: always
     volumes:
       - ./mnt/enterprise:/mnt/enterprise:ro
-      - ./mnt/dependencies:/mnt/dependencies:ro
       - ./mnt/addons:/mnt/addons:ro
       - odoo-volume:/var/lib/odoo
       #- /opt/odoo/data:/var/lib/odoo
