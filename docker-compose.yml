@@ -7,7 +7,7 @@ services:
       - '1025:1025'
 
   odoo-database:
-    image: postgres:17
+    image: postgres:17-bookworm
     user: root
     restart: always
     environment:
