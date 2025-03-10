@@ -71,3 +71,19 @@ volumes:
   database-volume:
   odoo-volume:
 ```
+
+ ### Update stack
+
+```shell
+docker compose exec -it odoo-web odoo \
+--stop-after-init \
+--config=/etc/odoo/odoo.conf \
+--update=all \
+--database=odoo \
+--db_host=odoo-database \
+--db_port=5432 \
+--db_user=odoo \
+--db_password=password \
+--xmlrpc-port=8012 \
+--dev=assets
+```
